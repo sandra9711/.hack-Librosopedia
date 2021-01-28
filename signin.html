@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="img\favicon.png" sizes="76x76">
+    
+</head>
+
+<body>
+    <div class="container">
+        <img src="img\Librosopedia (1).png" width="80px">
+        <h1>Join the Librospedia community</h1>
+    </div>
+    <div class="details">
+        <form>
+            <input type="email" id="eid" placeholder="Enter Email" class="email" required><br><br>
+
+
+            <input type="text" id="fnm" placeholder="Enter First name" class="firstname" required><br><br>
+
+
+            <input type="text" id="snm" placeholder="Enter Last name" class="lastname" required><br><br>
+
+
+            <input type="number" id="pno" placeholder="Enter Phone Number" class="phnno" required><br><br>
+
+
+            <input type="password" id="psw" placeholder="Enter password" class="psw" required><br><br>
+
+
+            <input type="password" id="cpw" placeholder="Confirm your password" class="c-psw" required><br><br>
+
+            <button type="button" id="btn" class="btn" onclick="myFunction()"><b>SUBMIT</b></button><br><br>
+
+            <hr>
+
+            <p>Already have an account?<a href="#">Log in</a></p>
+        </form>
+    </div>
+        
+    <script src="main.js"></script>
+</body>
+<script>
+    function myFunction(){
+    if(document.getElementById("eid").value==null){
+        window.alert("This field can't be empty");
+    }
+    if(document.getElementById("fnm").value==null){
+        window.alert("This field can't be empty");
+    }
+    if(document.getElementById("snm").value==null){
+        window.alert("This field can't be empty");
+    }
+    if(document.getElementById("pno").value==null){
+        window.alert("This field can't be empty");
+    }
+    if(document.getElementById("psw").value==null){
+        window.alert("This field can't be empty");
+    }
+    if(document.getElementById("cpw").value==null){
+        window.alert("This field can't be empty");
+    }
+    fn2();
+    loc();
+}
+function loc(){
+    location.replace("library.html")
+}
+function fn2(){
+    var psw=document.getElementById("pws").value;
+    var cpw=document.getElementById("cpw").value;
+    if(psw!=cpw){
+        window.alert("Invalid password")
+    }else{
+        document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f;color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
+    }
+}
+</script>
+<style>
+    *
+{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto",sans-serif;
+    margin : 0;
+    padding : 0;
+    background-image:url("bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    width: 700px;
+    display: flex;
+    padding:30px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    margin: auto;
+    margin-top: 30px;
+    align-content: center;
+}
+.container h1{
+    color: blue;
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.btn{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+    cursor: pointer;
+    outline: none;
+    width: 50%;
+    font-size:large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.details{
+    width : 400px;
+    box-shadow: 0 0 3px rgba(0,0,0,3);
+    border-radius: 20px;
+    background: #999;
+    padding:20px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.email,.firstname,.lastname,.phnno,.psw,.c-psw{
+border-radius: 20px;
+padding: 10px;
+margin: 10px 0;
+width: 100%;
+border: 1px solid #999;
+outline: none;
+}
+</style>
+</html>

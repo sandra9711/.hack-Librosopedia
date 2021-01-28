@@ -24,8 +24,9 @@
     <div class="opt">
         <p> <input type="radio" id="get" name="get" value="get">I'm here to get books</p>
         <p> <input type="radio" id="con" name="con" value="con">I'm here to contribute</p>
+        <p> <input type="radio" id="swap" name="swap" value="swap">I'm here to Swap book</p>
     </div>
-    <div class="btn"><button type="button" class="btn btn-secondary" onclick=" jFunction() ">Join</button></div>
+    <div class="btn"><button type="button" class="btn btn-secondary" onclick=" jFunction(); ">Join</button></div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="main.js"></script>
@@ -34,12 +35,15 @@
 <script>
   function jFunction(){
     if(document.getElementById("get").checked==true){
-        //location.replace("index.html")
-        //document.body.style.backgroundColor = "#6d5f5f";
-        document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f;color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
+        location.replace("signin.html")
+        
     }else if(document.getElementById("con").checked==true){
         //document.body.style.backgroundColor = "#6d5f5f";
-        document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f; color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
+        location.replace("signin.html")
+        
+    }else if(document.getElementById("swap").checked==true){
+        location.replace("signin.html")
+        
     }else{
         window.alert("Select one option to join");
     }

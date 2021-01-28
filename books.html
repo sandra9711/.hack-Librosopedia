@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img\favicon.png" sizes="76x76">
     <title>Books</title>
 </head>
 <body>
@@ -50,7 +51,7 @@
         var d_2=document.getElementById("fid2");
         var d_3=document.getElementById("fid3");
         
-       /* if(d_1.value==""){
+       if(d_1.value==""){
             alert("Contributor Name should be filled.");
         }
         if(d_2.value==""){
@@ -59,22 +60,22 @@
         }
         if(d_3.value==""){
             alert("Contact cannot be empty.");
-        }*/
-        if(d_1.value!=null && d_3.value!=null && d_3.value!=null){
-            document.getElementById("con").innerHTML="Thank you "+d_1+"\nYou have succesfully uploaded the book details.";
+        }
+        if(d_1.value!=null && d_2.value!=null && d_3.value!=null){
+            document.getElementById("con").innerHTML="Thank you You have succesfully uploaded the book details.";
             event.preventDefault();
         }
-        if(d_1.value==null || d_3.value==null || d_3.value==null){
+        if(d_1.value==null || d_2.value==null || d_3.value==null){
             document.getElementById("con").innerHTML="Upload failed .Try Again";
             event.preventDefault();
         }
     }
     function fn2(){
-        if(d_1.value!=null && d_3.value!=null && d_3.value!=null){
-            document.getElementById("con").innerHTML="Thank you "+d_1.value+"\nYou have succesfully uploaded the book details.";
+        if(d_1.value!=null && d_2.value!=null && d_3.value!=null){
+            document.getElementById("con").innerHTML="Thank you You have succesfully uploaded the book details.";
             event.preventDefault();
         }else{
-            document.getElementById("con").innerHTML="Upload failed .Try Again";
+            document.getElementById("con").innerHTML="Upload failed!Try Again";
             event.preventDefault();
         }
     }
@@ -92,9 +93,15 @@
         .sec{
             padding: 20px;
             color: white;
-            background-color: brown;
+            background-color: rgb(65, 19, 19);
             font-size: 2em;
             margin: 3em;
+        }
+        body{
+            background-image: url("img-bg.png");
+            background-repeat: no-repeat;
+            background-color: rgb(204, 192, 175);
+            background-size: cover;
         }
     </style>
 </body>
