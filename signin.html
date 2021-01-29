@@ -40,42 +40,83 @@
             <p>Already have an account?<a href="#">Log in</a></p>
         </form>
     </div>
-        
-    <script src="main.js"></script>
+    <div class="fail" id="fail">
+        <p style=" color: red">Registration failed! Try again.Please fill the details carefully.</p>
+        <button onclick="locset()">Reload</button>
+    </div>  
+    <!--<script src="main.js"></script>-->
 </body>
 <script>
+    function locset() {
+        location.replace("signin.html")
+    }
     function myFunction(){
-    if(document.getElementById("eid").value==null){
-        window.alert("This field can't be empty");
+       var fnm=document.getElementById("fnm").value;
+       var snm=document.getElementById("snm").value;
+       var eid=document.getElementById("eid").value;
+       var pno=document.getElementById("fnm").value;
+       var ps1=document.getElementById("psw").value;
+       var ps2=document.getElementById("cpw").value;
+       if(fnm=="" || ps1=="" || ps2=="" || eid=="" || pno==""){
+           alert("Fields can't be empty")
+       }
+       if(pas_valid(ps1,ps2)==false || email_valid(eid)==false){
+          document.getElementById("fail").style.display="block";
+          event.preventDefault();
+        }
+        document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f;color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
+       
+           
+}
+function email_valid(uemail)
+{
+    var atposition=uemail.indexOf("@");  
+    var dotposition=uemail.lastIndexOf(".");
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+        alert("Please enter a valid email address");
+        return false;
+    }else{
+        return true;
     }
-    if(document.getElementById("fnm").value==null){
-        window.alert("This field can't be empty");
-    }
-    if(document.getElementById("snm").value==null){
-        window.alert("This field can't be empty");
-    }
-    if(document.getElementById("pno").value==null){
-        window.alert("This field can't be empty");
-    }
-    if(document.getElementById("psw").value==null){
-        window.alert("This field can't be empty");
-    }
-    if(document.getElementById("cpw").value==null){
-        window.alert("This field can't be empty");
-    }
-    fn2();
-    loc();
+}
+
+function allnumber(uzip)
+{ 
+
+if(isNaN(uzip)) 
+{
+alert('Phone No. must have numeric characters only');
+uzip.focus();
+return false;
+}else{
+    return true;
+}
+}
+
+function allalpha(name){
+    var letters = /^[A-Za-z]+$/;
+if(name.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Name must have alphabet characters only');
+uname.focus();
+return false;
+}
 }
 function loc(){
     location.replace("library.html")
 }
-function fn2(){
-    var psw=document.getElementById("pws").value;
-    var cpw=document.getElementById("cpw").value;
-    if(psw!=cpw){
-        window.alert("Invalid password")
+function pas_valid(pas1,pas2){
+    //var psw=document.getElementById("pws").value;
+    //var cpw=document.getElementById("cpw").value;
+    if(pas1!=pas2){
+        alert("Invalid password")
+        return false;
     }else{
-        document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f;color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
+        return true;
     }
 }
 </script>
@@ -139,6 +180,9 @@ margin: 10px 0;
 width: 100%;
 border: 1px solid #999;
 outline: none;
+}
+.fail{
+    display: none;
 }
 </style>
 </html>

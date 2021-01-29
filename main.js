@@ -14,23 +14,23 @@ function myFun(){
     })
 }
 function myFunction(){
-    if(document.getElementById("eid").value==null){
-        window.alert("This field can't be empty");
+    if(document.getElementById("eid").value==null || document.getElementById("eid").value==""){
+        alert("This field can't be empty");
     }
-    if(document.getElementById("fnm").value==null){
-        window.alert("This field can't be empty");
+    if(document.getElementById("fnm").value==null || document.getElementById("fnm").value==""){
+        alert("This field can't be empty");
     }
-    if(document.getElementById("snm").value==null){
-        window.alert("This field can't be empty");
+    if(document.getElementById("snm").value==null || document.getElementById("snm").value==""){
+        alert("This field can't be empty");
     }
-    if(document.getElementById("pno").value==null){
-        window.alert("This field can't be empty");
+    if(document.getElementById("pno").value==null || document.getElementById("pno").value==""){
+        alert("This field can't be empty");
     }
-    if(document.getElementById("psw").value==null){
-        window.alert("This field can't be empty");
+    if(document.getElementById("psw").value==null || document.getElementById("psw").value==""){
+        alert("This field can't be empty");
     }
-    if(document.getElementById("cpw").value==null){
-        window.alert("This field can't be empty");
+    if(document.getElementById("cpw").value==null || document.getElementById("cpw").value==""){
+        alert("This field can't be empty");
     }
     fn2();
     loc();
