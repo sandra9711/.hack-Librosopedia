@@ -63,9 +63,9 @@
        if(pas_valid(ps1,ps2)==false || email_valid(eid)==false){
           document.getElementById("fail").style.display="block";
           event.preventDefault();
-        }
+        }if(pas_valid(ps1,ps2)==true && email_valid(eid)==true){
         document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f;color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
-       
+        }
            
 }
 function email_valid(uemail)
