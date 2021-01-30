@@ -16,19 +16,19 @@
     </div>
     <div class="details">
         <form>
-            <input type="email" id="eid" placeholder="Enter Email" class="email" required><br><br>
+            <input type="email" id="eid" placeholder="Enter Email" class="email" required onchange="email_valid()"><br><br>
 
 
-            <input type="text" id="fnm" placeholder="Enter First name" class="firstname" required><br><br>
+            <input type="text" id="fnm" placeholder="Enter First name" class="firstname" onchange="fillnm()" required><br><br>
 
 
-            <input type="text" id="snm" placeholder="Enter Last name" class="lastname" required><br><br>
+            <input type="text" id="snm" placeholder="Enter Last name" class="lastname" ><br><br>
 
 
-            <input type="number" id="pno" placeholder="Enter Phone Number" class="phnno" required><br><br>
+            <input type="number" id="pno" placeholder="Enter Phone Number" class="phnno" onchange="filln()" required><br><br>
 
 
-            <input type="password" id="psw" placeholder="Enter password" class="psw" required><br><br>
+            <input type="password" id="psw" placeholder="Enter password" class="psw" onchange="fillp()" required><br><br>
 
 
             <input type="password" id="cpw" placeholder="Confirm your password" class="c-psw" required><br><br>
@@ -37,7 +37,7 @@
 
             <hr>
 
-            <p>Already have an account?<a href="#">Log in</a></p>
+            <p>Already have an account?<a href="login.html">Log in</a></p>
         </form>
     </div>
     <div class="fail" id="fail">
@@ -47,29 +47,34 @@
     <!--<script src="main.js"></script>-->
 </body>
 <script>
+    function fillnm(){
+        if(document.getElementById("fnm").value==""){
+           alert("Name cannot be empty");
+        }
+    }
+    function fillp(){
+        if(document.getElementById("psw").value==""){
+           alert("Password cannot be empty");
+        }
+    }
+    function filln(){
+        if(document.getElementById("pno").value==""){
+           alert("Phone Number cannot be empty");
+        }
+    }
     function locset() {
         location.replace("signin.html")
     }
-    function myFunction(){
-       var fnm=document.getElementById("fnm").value;
-       var snm=document.getElementById("snm").value;
-       var eid=document.getElementById("eid").value;
-       var pno=document.getElementById("fnm").value;
-       var ps1=document.getElementById("psw").value;
-       var ps2=document.getElementById("cpw").value;
-       if(fnm=="" || ps1=="" || ps2=="" || eid=="" || pno==""){
-           alert("Fields can't be empty")
-       }
-       if(pas_valid(ps1,ps2)==false || email_valid(eid)==false){
+function myFunction(){
+       if(pas_valid()==false){
           document.getElementById("fail").style.display="block";
           event.preventDefault();
-        }if(pas_valid(ps1,ps2)==true && email_valid(eid)==true){
-        document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f;color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
+        }else{
+           document.write("<h2 style='padding:20px;'>Welcome ,You Succesfully Joined Librosopedia community.<br> <br><button style='background-color:#6d5f5f;color:white; padding:10px;' class='btn btn-secondary' onclick='loc()'>Get Started</button>")
         }
-           
 }
-function email_valid(uemail)
-{
+function email_valid()
+{   var uemail=document.getElementById("eid").value;
     var atposition=uemail.indexOf("@");  
     var dotposition=uemail.lastIndexOf(".");
     if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
@@ -93,7 +98,8 @@ return false;
 }
 }
 
-function allalpha(name){
+function allalpha(){
+    var name=document.getElementById("fnm").value;
     var letters = /^[A-Za-z]+$/;
 if(name.value.match(letters))
 {
@@ -109,9 +115,9 @@ return false;
 function loc(){
     location.replace("library.html")
 }
-function pas_valid(pas1,pas2){
-    //var psw=document.getElementById("pws").value;
-    //var cpw=document.getElementById("cpw").value;
+function pas_valid(){
+    var pas1=document.getElementById("pws").value;
+    var pas2=document.getElementById("cpw").value;
     if(pas1!=pas2){
         alert("Invalid password")
         return false;
