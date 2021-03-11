@@ -7,6 +7,14 @@
     <title>Login page</title>
     <link rel="icon" href="img\favicon.png" sizes="76x76">
     <link rel="stylesheet" href="style2.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="firebase.js"></script>   
+    <script src="login.js"></script>
     <script>
         function logFun(){
             var eid=document.getElementsById("reqe").value;
@@ -26,7 +34,7 @@
                 return true;
             }
         }
-        function Submit(){
+        function SubmitFun(){
             location.replace("library.html")
         }
         function email_valid()
@@ -51,22 +59,50 @@
     </div>
     <div class="details">
         <form>
-            <input type="email" placeholder="Enter Email" onchange="email_valid()" class="email" id="reqe"><div class="gif" id="gif"></div><br><br>
+            <input type="email" placeholder="Enter Email" onchange="email_valid()" class="email" id="reqe"><div class="gif" id="gif" required></div><br><br>
 
-            <input type="password" placeholder="Enter password" class="psw" id="reqp" onchange="pasCk()"><br><br>
+            <input type="password" placeholder="Enter password" class="psw" id="reqp" onchange="pasCk()" required><br><br>
 
 
-            <button type="button" class="btn" onclick="Submit()"><b>SUBMIT</b></button><br><br>
+            <button type="submit" class="btn" onclick="login()"><b>SUBMIT</b></button><br><br>
 
             <hr>
 
             <p>Don't have an account?<a href="signin.html">Sign up</a></p>
         </form>
     </div>
-        
-    <script src="main.js"></script>
+    
 </body>
+<script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
+    authDomain: "librosopedia.firebaseapp.com",
+    projectId: "librosopedia",
+    storageBucket: "librosopedia.appspot.com",
+    messagingSenderId: "956548396826",
+    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
+  const auth = firebase.auth();
+  
+  function login(){
+      var email = document.getElementById("reqe");
+      var pasw = document.getElementById("reqp");
+      var user=userCredential.user;
+      if(user){
+          alert("Logged In");
+      }
+      const promise = auth.signInWithEmailAndPassword(email.value, pasw.value);
+		promise.catch(e => alert(e.message));
+		
+		alert("Signed Up");
+
+  }
+
+  
+</script>
 <style>
     *
 {
