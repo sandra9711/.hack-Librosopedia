@@ -8,18 +8,14 @@
     <link rel="icon" href="img\favicon.png" sizes="76x76">
     <link rel="stylesheet" href="style2.css">
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-  
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
-    <script src="firebase.js"></script>   
+        
+   
     <script src="login.js"></script>
     <script>
         function logFun(){
             var eid=document.getElementsById("reqe").value;
             if(email_valid(eid)==true){
-                document.getElementById("gif").innerHTML="<img src='check.gif'/>";
+                //document.getElementById("gif").innerHTML="<img src='check.gif' width='4px' height='15px'/>";
                 return  true;
             }else{
                 alert("Invalid email");
@@ -41,18 +37,18 @@
         {   var uemail=document.getElementById("reqe").value;
             var atposition=uemail.indexOf("@");  
             var dotposition=uemail.lastIndexOf(".");
-            if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+            if (atposition<1 || dotposition<atposition+2 || dotposition+2>=uemail.length){
                 alert("Please enter a valid email address");
                 return false;
             }else{
-                document.getElementById("gif").innerHTML="<img src='check.gif'/>";
+                document.getElementById("gif").innerHTML="<img src='check.gif' width='40px' height='15px'/>";
                 return true;
             }
         }
         </script>
 </head>
 
-<body>
+<body >
     <div class="container">
         <img src="img\Librosopedia (1).png" alt="Logo img" width="60px">
         <h1><b>LOG IN</b></h1>
@@ -71,38 +67,14 @@
             <p>Don't have an account?<a href="signin.html">Sign up</a></p>
         </form>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+      
+       
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
     
 </body>
-<script>
-    var firebaseConfig = {
-    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
-    authDomain: "librosopedia.firebaseapp.com",
-    projectId: "librosopedia",
-    storageBucket: "librosopedia.appspot.com",
-    messagingSenderId: "956548396826",
-    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  const auth = firebase.auth();
-  
-  function login(){
-      var email = document.getElementById("reqe");
-      var pasw = document.getElementById("reqp");
-      var user=userCredential.user;
-      if(user){
-          alert("Logged In");
-      }
-      const promise = auth.signInWithEmailAndPassword(email.value, pasw.value);
-		promise.catch(e => alert(e.message));
-		
-		alert("Signed Up");
-
-  }
-
-  
-</script>
+    
 <style>
     *
 {

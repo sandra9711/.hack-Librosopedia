@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="icon" href="img\favicon.png" sizes="76x76">
-    
+    <script src="main.js"></script>
+   
 </head>
 
 <body>
@@ -46,45 +47,14 @@
     </div>  
     <script src="login.js"></script>
     
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
-  
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+      
+       
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
     
-
-
 <script>
-    var firebaseConfig = {
-    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
-    authDomain: "librosopedia.firebaseapp.com",
-    projectId: "librosopedia",
-    storageBucket: "librosopedia.appspot.com",
-    messagingSenderId: "956548396826",
-    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  const auth = firebase.auth();
-  function signup(){
-    var email = document.getElementById("eid");
-    var pasw = document.getElementById("psw");
-    const promise = auth.createUserWithEmailAndPassword(email.value, pasw.value).then((userCredential) =>{
-        
-        var user = userCredential.user;
-            var uid;
-            if (user != null) {
-                uid = user.uid;
-            }
-            
-		alert(uid+" Signed Up");
-        location.replace("library.html");
-    });
-	promise.catch(e => alert(e.message));
-	alert("the");
-
-  }
+    
     function fillnm(){
         if(document.getElementById("fnm").value==""){
            alert("Name cannot be empty");
@@ -162,6 +132,7 @@ function pas_valid(){
     }
 }
 </script>
+
 </body>
 
 <style>
