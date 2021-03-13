@@ -34,7 +34,7 @@
 
             <input type="password" id="cpw" placeholder="Confirm your password" class="c-psw" required><br><br>
 
-            <button type="submit" id="btn" class="btn" onclick="signup()"><b>SUBMIT</b></button><br><br>
+            <button type="submit" id="btn" class="btn" onclick="sign_up()"><b>SUBMIT</b></button><br><br>
 
             <hr>
 
@@ -54,7 +54,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
     
 <script>
-    
+    function sign_up(){
+        location.replace("library.html");
+    }
     function fillnm(){
         if(document.getElementById("fnm").value==""){
            alert("Name cannot be empty");

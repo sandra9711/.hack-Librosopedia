@@ -7,8 +7,31 @@
     <title>Books</title>
 </head>
 <body>
-    <h1>Currently, books not available in this category.</h1>
-    <button onclick="formFunction()" type="button" class="sec">Contribute</button>
+    <div class="prod-1">
+         <div class="vis">
+             <h1>Book name</h1>
+             <h2>Author</h2>
+             <img src="think like a monk.png" width="300px" alt="think like a monk"></img>
+             <p>Price</p>
+             <button onclick="getCon()" class="btn" type="submit">Details</button>
+             <div class="inv" id="inv">
+                <legend><b>Contributor details</b></legend>
+                Name: <br>
+                    
+                <br><br>
+                Contact:<br>
+                
+                <br><br>
+                
+             </div>
+         </div>
+    </div>
+    <div class="prod-2">
+
+    </div>
+    <div class="cont">
+        
+    <button onclick="formFunction()" type="button" class="sec">Contribute in this category</button>
     <form  class="fc1" name="fm" id="form">
         <fieldset>
             <legend><b>Book details</b>
@@ -25,10 +48,14 @@
             Image:<br>
             <input id="fid4" type="file" name="bookim" accept="image/x-png,image/gif,image/jpeg">
             <br><br>
+            Set Price:<br>
+            <input id="fid5" type="text" name="bookpr">
+            <br><br>
             <button type="submit" onclick="fn()">SUBMIT</button>
         </fieldset>
     </form>
     <p id="con"></p>
+    </div>
     <script>
         function dtFunction(){
             var name=prompt("Name:","Enter name here");
@@ -46,42 +73,32 @@
                 event.preventDefault()
             }
         }
-    function fn(){
-        var d_1=document.getElementById("fid1");
-        var d_2=document.getElementById("fid2");
-        var d_3=document.getElementById("fid3");
-        
-       if(d_1.value==""){
-            alert("Contributor Name should be filled.");
+        function getCon(){
+            var name;
+            var cont;
+            if(document.getElementById("inv").style.display="none"){
+                document.getElementById("inv").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv").style.display="block"){
+                document.getElementById("inv").style.display="none";
+                event.preventDefault()
+            }
         }
-        if(d_2.value==""){
-            alert("Book Name and category should be filled.");
     
-        }
-        if(d_3.value==""){
-            alert("Contact cannot be empty.");
-        }
-        if(d_1.value!=null && d_2.value!=null && d_3.value!=null){
-            document.getElementById("con").innerHTML="Thank you You have succesfully uploaded the book details.";
-            event.preventDefault();
-        }
-        if(d_1.value==null || d_2.value==null || d_3.value==null){
-            document.getElementById("con").innerHTML="Upload failed .Try Again";
-            event.preventDefault();
-        }
-    }
-    function fn2(){
-        if(d_1.value!=null && d_2.value!=null && d_3.value!=null){
-            document.getElementById("con").innerHTML="Thank you You have succesfully uploaded the book details.";
-            event.preventDefault();
-        }else{
-            document.getElementById("con").innerHTML="Upload failed!Try Again";
-            event.preventDefault();
-        }
-    }
+    
     </script>
     <style>
+        
+        .prod-1{
+            background-color: rgb(241, 225, 219);
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
         #form{
+            display: none;
+        }
+        #inv{
             display: none;
         }
         .fc1{
@@ -104,5 +121,61 @@
             background-size: cover;
         }
     </style>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+      
+       
+      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+     <script>
+         var firebaseConfig = {
+    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
+    authDomain: "librosopedia.firebaseapp.com",
+    projectId: "librosopedia",
+    storageBucket: "librosopedia.appspot.com",
+    messagingSenderId: "956548396826",
+    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ //var database=firebase.database();
+
+     </script>
+     <script>
+         //Insering Data to firebase db
+    function fn(){
+        var d_1=document.getElementById("fid1");
+        var d_2=document.getElementById("fid2");
+        var d_3=document.getElementById("fid3");
+        var d_5=document.getElementById("fid5");
+       if(d_1.value==""){
+            alert("Contributor Name should be filled.");
+        }
+        if(d_2.value==""){
+            alert("Book Name and category should be filled.");
+    
+        }
+        if(d_3.value==""){
+            alert("Contact cannot be empty.");
+        }
+        if(d_1.value!=null && d_2.value!=null && d_3.value!=null){
+            firebase.database.ref('books/'+d_2).set({
+                Contributor_Name: d_1.value,
+                Book_name: d_2.value,
+                Contact:d_3.value,
+                Price:d_5.value
+
+            });
+            alert("data inserted successfully");
+            
+            document.getElementById("con").innerHTML="Thank you You have succesfully uploaded the book details.";
+            event.preventDefault();
+        }
+        if(d_1.value==null || d_2.value==null || d_3.value==null){
+            document.getElementById("con").innerHTML="Upload failed .Try Again";
+            event.preventDefault();
+        }
+    }
+     </script>
 </body>
 </html>
