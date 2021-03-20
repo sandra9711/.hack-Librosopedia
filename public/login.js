@@ -1,4 +1,4 @@
-var firebaseConfig = {
+/**var firebaseConfig = {
     apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
     authDomain: "librosopedia.firebaseapp.com",
     projectId: "librosopedia",
@@ -7,9 +7,13 @@ var firebaseConfig = {
     appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);**/
 
   //const auth = firebase.auth();
+  document.addEventListener("DOMContentLoaded",event=>{
+    const app=firebase.app();
+    console.log(app)
+  });
   function signup(){
     var email = document.getElementById("eid");
     var pasw = document.getElementById("psw");
