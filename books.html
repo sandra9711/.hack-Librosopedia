@@ -7,32 +7,50 @@
     <title>Books</title>
 </head>
 <body>
-    <div class="prod-1">
-         <div class="vis">
-             <h1>Book name</h1>
-             <h2>Author</h2>
-             <img src="think like a monk.png" width="300px" alt="think like a monk"></img>
-             <p>Price</p>
-             <button onclick="getCon()" class="btn" type="submit">Details</button>
-             <div class="inv" id="inv">
-                <legend><b>Contributor details</b></legend>
-                Name: <br>
-                    
-                <br><br>
-                Contact:<br>
-                
-                <br><br>
-                
-             </div>
-         </div>
-    </div>
-    <div class="prod-2">
-
+    <div class="container">
+        <div class="prod-1" id="st-box">
+            <div class="vis">
+                <h1>Book name</h1>
+                <h2>Author</h2>
+                <img src="think like a monk.png" width="300px" alt="think like a monk"></img>
+                <p>Price</p>
+                <button onclick="getCon()" class="bton1" id="bton1" type="submit">Details</button>
+                <div class="inv" id="inv">
+                   <legend><b>Contributor details</b></legend>
+                   Name: <br>
+                       
+                   <br><br>
+                   Contact:<br>
+                   
+                   <br><br>
+                   
+                </div>
+            </div>
+       </div>
+       <div class="prod-2" id="nd-box">
+           <div class="vis2">
+               <h1>Book name</h1>
+               <h2>Author</h2>
+               <img src="think like a monk.png" width="300px" alt="think like a monk"></img>
+               <p>Price</p>
+               <button onclick="getCon()" class="bton2" id="bton2" type="submit">Details</button>
+               <div class="inv" id="inv2">
+                  <legend><b>Contributor details</b></legend>
+                  Name: <br>
+                      
+                  <br><br>
+                  Contact:<br>
+                  
+                  <br><br>
+                  
+               </div>
+       </div>
+       
     </div>
     <div class="cont">
         
     <button onclick="formFunction()" type="button" class="sec">Contribute in this category</button>
-    <form  class="fc1" name="fm" id="form">
+    <form  class="fc1" name="fm" id="form" onsubmit="event">
         <fieldset>
             <legend><b>Book details</b>
             </legend>
@@ -74,76 +92,27 @@
             }
         }
         function getCon(){
-            var name;
-            var cont;
-            if(document.getElementById("inv").style.display="none"){
+            
+            if(window.event.srcElement.id=="bton1"){
+                if(document.getElementById("inv").style.display="none"){
                 document.getElementById("inv").style.display="block";
                 event.preventDefault()
             }else if(document.getElementById("inv").style.display="block"){
                 document.getElementById("inv").style.display="none";
                 event.preventDefault()
             }
+            }else {
+                if(document.getElementById("inv2").style.display="none"){
+                document.getElementById("inv2").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv2").style.display="block"){
+                document.getElementById("inv2").style.display="none";
+                event.preventDefault()
+            }
+            }
         }
-    
-    
-    </script>
-    <style>
         
-        .prod-1{
-            background-color: rgb(241, 225, 219);
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-        }
-        #form{
-            display: none;
-        }
-        #inv{
-            display: none;
-        }
-        .fc1{
-            padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(204, 192, 175);
-        }
-        .sec{
-            padding: 20px;
-            color: white;
-            background-color: rgb(65, 19, 19);
-            font-size: 2em;
-            margin: 3em;
-        }
-        body{
-            background-image: url("img-bg.png");
-            background-repeat: no-repeat;
-            background-color: rgb(204, 192, 175);
-            background-size: cover;
-        }
-    </style>
-        
-        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-      
-       
-      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
-     <script>
-         var firebaseConfig = {
-    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
-    authDomain: "librosopedia.firebaseapp.com",
-    projectId: "librosopedia",
-    storageBucket: "librosopedia.appspot.com",
-    messagingSenderId: "956548396826",
-    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
- //var database=firebase.database();
-
-     </script>
-     <script>
-         //Insering Data to firebase db
-    function fn(){
+        function fn(){
         var d_1=document.getElementById("fid1");
         var d_2=document.getElementById("fid2");
         var d_3=document.getElementById("fid3");
@@ -166,7 +135,7 @@
                 Price:d_5.value
 
             });
-            alert("data inserted successfully");
+            
             
             document.getElementById("con").innerHTML="Thank you You have succesfully uploaded the book details.";
             event.preventDefault();
@@ -176,6 +145,88 @@
             event.preventDefault();
         }
     }
+    </script>
+    
+        
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+      
+       
+      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+     <script>
+         var firebaseConfig = {
+    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
+    authDomain: "librosopedia.firebaseapp.com",
+    projectId: "librosopedia",
+    storageBucket: "librosopedia.appspot.com",
+    messagingSenderId: "956548396826",
+    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ //var database=firebase.database();
+
      </script>
+
 </body>
 </html>
+<style>
+        .cont{
+            padding-top:520px; 
+            padding-left:15px; 
+            padding-right:15px;
+            float: left; 
+        }
+        .container { 
+            width:900px; 
+            height:490px; 
+            
+            padding-top:20px; 
+            padding-left:15px; 
+            padding-right:15px; 
+        } 
+        #st-box { 
+            float:left; 
+            width:180px; 
+            height:160px; 
+            background-color:white; 
+            border:solid black; 
+        } 
+        #nd-box { 
+            float:right; 
+            width:180px; 
+            height:160px; 
+            background-color:white;  
+            border:solid black; 
+            margin-left:20px; 
+        } 
+        
+    #form{
+        display: none;
+    }
+    #inv{
+        display: none;
+    }
+    #inv2{
+        display: none;
+    }
+    .fc1{
+        padding: 20px;
+margin-left: auto;
+margin-right: auto;
+background-color: rgb(204, 192, 175);
+    }
+    .sec{
+        padding: 20px;
+        color: white;
+        background-color: rgb(65, 19, 19);
+        font-size: 2em;
+        margin: 3em;
+    }
+    body{
+        background-image: url("img-bg.png");
+        background-repeat: no-repeat;
+        background-color: rgb(204, 192, 175);
+        background-size: cover;
+    }
+</style>
