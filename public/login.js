@@ -22,7 +22,7 @@
     // Signed in 
     var user = userCredential.user;
     alert("Yay Signed Up");
-    location.replace("library.html");
+    location.replace("file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/library.html");
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -40,7 +40,7 @@ firebase.auth.Auth.Persistence.NONE;
       var email = document.getElementById("reqe").value;
       var pasw = document.getElementById("reqp").value;
       
-      const promise = auth.signInWithEmailAndPassword(email, pasw).then((success) =>{
+      const promise = firebase.auth.signInWithEmailAndPassword(email, pasw).then((success) =>{
         
         var user = userCredential.user;
             var uid;
@@ -49,7 +49,7 @@ firebase.auth.Auth.Persistence.NONE;
             }
             
 		alert("Logged In");
-        location.replace("library.html");
+        location.replace("file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/library.html");
     });
 		promise.catch(e => alert(e.message));
 		
