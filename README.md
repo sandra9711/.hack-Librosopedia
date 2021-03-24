@@ -1,5 +1,5 @@
 # .hack-Librosopedia
-<<<<<<< HEAD
+
 # A simple web app to swap and contribute used books.Thereby we can save more trees.
 # The tagline is Read Reuse Repeat
 ![](images/lp.png)
