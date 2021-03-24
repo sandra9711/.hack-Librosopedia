@@ -17,29 +17,42 @@
 <script src="/__/firebase/init.js"></script>
 </head>
 <body>
+    <div class="sp-fun">
+        
+        <ul>
+            <li>
+                <img onclick="resetloc()" src="/img/home.png" /> 
+            </li>
+            <li>
+                <img onclick="logout()" src="/img/lgout.png" />
+            </li>
+        </ul>
+    </div>
     <h1><b>Books by category</b></h1>
     <div class="lib-cont-r1">
         <div class="novel">
-            <a href="#" id="novel"><img src="novel.jpg" alt="book"/><span>Novels & Fiction</span></a>
+            <a href="#" id="novel"><img src="/img/novel.jpg" alt="book"/><span>Novels & Fiction</span></a>
         </div>
         <div class="text">
-            <a href="#" id="text"><img src="text.jpg" alt="book"/><span>Text Books</span></a>
+            <a href="#" id="text"><img src="/img/text.jpg" alt="book"/><span>Text Books</span></a>
         </div>
     </div>
     <div class="lib-cont-r2">
         <div class="exam">
-            <a href="#" id="exam"><img src="exam.jpg" alt="book"/><span>Competitive exams</span></a>
+            <a href="#" id="exam"><img src="/img/exam.jpg" alt="book"/><span>Competitive exams</span></a>
         </div>
         <div class="kids">
-            <a href="#" id="kids"><img src="kids.jpg" alt="book"/><span>Children Books</span></a>
+            <a href="#" id="kids"><img src="/img/kids.jpg" alt="book"/><span>Children Books</span></a>
         </div>
     </div>
 </body>
+<script src="./JS/login.js"></script>
+    
 <style>
     
     body{
         background-color: rgb(198, 199, 161);
-        background-image: url("wood.jpg");
+        background-image: url("/img/wood.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -101,6 +114,24 @@ a span {
     color: rgb(245, 244, 244);
     font-size: 1.7em;
     background-color: rgba(0,0,0,0.5);
+}
+.sp-fun {
+	right: 0;
+	position: fixed;
+	top: 5%;
+}
+.sp-fun ul li{
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: right;
+    list-style: none;
+	position: relative;
+    cursor: pointer;
+}
+.sp-fun ul li img{
+  padding: 5px;
+  width: 80px;
 }
 @media only screen and (max-width: 600px){
     .novel{
@@ -169,21 +200,25 @@ img{
 }
 </style>
 <script>
+    
     text=document.getElementById("text").addEventListener("click",calltxt,true);
     kids=document.getElementById("kids").addEventListener("click",callkds,true);
     exam=document.getElementById("exam").addEventListener("click",callexm,true);
     novel=document.getElementById("novel").addEventListener("click",callnvl,true);
     function callkds(){
-        location.replace("books.html")
+        location.replace("./books.html")
     }
     function callnvl(){
-        location.replace("books.html")
+        location.replace("./books.html")
     }
     function callexm(){
-        location.replace("books.html")
+        location.replace("./books.html")
     }
     function calltxt(){
-        location.replace("books.html")
+        location.replace("./books.html")
+    }
+    function resetloc(){
+        location.replace("./index.html")
     }
 </script>
 </html>

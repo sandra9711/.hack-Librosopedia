@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="icon" href="img\favicon.png" sizes="76x76">
-    <script src="file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/login.js"></script>
-   
+    <script src="https://kit.fontawesome.com/41d2951665.js" crossorigin="anonymous"></script>
+    
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+<script src="/__/firebase/8.3.1/firebase-auth.js"></script>
+<script src="/__/firebase/8.3.1/firebase-database.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
 </head>
 
 <body>
@@ -25,38 +35,27 @@
 
             <input type="text" id="snm" placeholder="Enter Last name" class="lastname" ><br><br>
 
-
-            <input type="number" id="pno" placeholder="Enter Phone Number" class="phnno" onchange="filln()" required><br><br>
-
-
+            
             <input type="password" id="psw" placeholder="Enter password" class="psw" onchange="fillp()" required><br><br>
 
 
             <input type="password" id="cpw" placeholder="Confirm your password" class="c-psw" required><br><br>
 
-            <button type="submit" id="btn" class="btn" onclick="signup()"><b>SUBMIT</b></button><br><br>
-
+            <button type="button" id="btn" class="btn" onclick="signup()"><b>SUBMIT</b></button><br><br>
+            <br><br>
+            <button type="button" class="btng" onclick="google_login()"><img id="glogo" width="80px" src="/img/glogo.png" /><br><b>SIGN IN WITH GOOGLE</b></button><br>
             <hr>
 
-            <p>Already have an account?<a href="file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/login.html">Log in</a></p>
+            <p>Already have an account?<a href="./login.html">Log in</a></p>
         </form>
     </div>
     <div class="fail" id="fail">
         <p style=" color: red">Registration failed! Try again.Please fill the details carefully.</p>
         <button onclick="locset()">Reload</button>
     </div>  
-   
+    <script src="./JS/login.js"></script>
     
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/8.3.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
-<script src="/__/firebase/8.3.1/firebase-auth.js"></script>
-<script src="/__/firebase/8.3.1/firebase-database.js"></script>
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+   
     
 <script>
     function sign_up(){
@@ -152,7 +151,7 @@ body{
     font-family: "Roboto",sans-serif;
     margin : 0;
     padding : 0;
-    background-image:url("bg.png");
+    background-image:url('/img/bg.png');
     background-size: cover;
     background-position: center;
 }
@@ -183,7 +182,18 @@ body{
     font-size:large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+.btng{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+    cursor: pointer;
+    outline: none;
+    height :10%;
+    width: 75%;
+    font-size:large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .details{
     width : 400px;
     box-shadow: 0 0 3px rgba(0,0,0,3);

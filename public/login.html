@@ -7,6 +7,8 @@
     <title>Login page</title>
     <link rel="icon" href="img\favicon.png" sizes="76x76">
     <link rel="stylesheet" href="style2.css">
+    <script src="https://kit.fontawesome.com/41d2951665.js" crossorigin="anonymous"></script>
+    
      <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/8.3.1/firebase-app.js"></script>
 
@@ -18,7 +20,7 @@
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
    
-    <script src="file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/login.js"></script>
+    <script src="./JS/login.js"></script>
     <script>
         function logFun(){
             var eid=document.getElementsById("reqe").value;
@@ -49,7 +51,7 @@
                 alert("Please enter a valid email address");
                 return false;
             }else{
-                document.getElementById("gif").innerHTML="<img src='check.gif' width='40px' height='15px'/>";
+                document.getElementById("gif").innerHTML="<img src='/img/check.gif' width='40px' height='15px'/>";
                 return true;
             }
         }
@@ -68,11 +70,15 @@
             <input type="password" placeholder="Enter password" class="psw" id="reqp" onchange="pasCk()" required><br><br>
 
 
-            <button type="submit" class="btn" onclick="login()"><b>SUBMIT</b></button><br><br>
-
+            <button type="button" class="btn" onclick="login()"><b>LOGIN</b></button><br><br>
+            <div class="gl">
+                <div class="g-logo"><img id="glogo" width="80px" src="/img/glogo.png" /></div>
+                <div class="sgnup"><button type="button" class="btn-g" onclick="google_login()"><b>SIGN IN WITH GOOGLE</b></button></div>
+            </div>
+            <br>
             <hr>
 
-            <p>Don't have an account?<a href="file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/signin.html">Sign up</a></p>
+            <p>Don't have an account?<a href="./signin.html">Sign up</a></p>
         </form>
     </div>
     
@@ -89,7 +95,7 @@ body{
     font-family: "Roboto",sans-serif;
     margin : 0;
     padding : 0;
-    background-image:url(bg.png);
+    background-image:url('/img/bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -98,7 +104,14 @@ body{
 html{
     height: 100%;
 }
-
+.gl{
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+	position: relative;
+    cursor: pointer;
+}
 .container{
     width: 400px;
     display: flex;
@@ -126,6 +139,18 @@ html{
     cursor: pointer;
     outline: none;
     width: 50%;
+    font-size:large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.btn-g{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 22px;
+    margin-right: 38px;
+    cursor: pointer;
+    outline: none;
     font-size:large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

@@ -1,28 +1,18 @@
-/**var firebaseConfig = {
-    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
-    authDomain: "librosopedia.firebaseapp.com",
-    projectId: "librosopedia",
-    storageBucket: "librosopedia.appspot.com",
-    messagingSenderId: "956548396826",
-    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);**/
 
-  //const auth = firebase.auth();
   document.addEventListener("DOMContentLoaded",event=>{
     const app=firebase.app();
     console.log(app)
   });
   function signup(){
-    var email = document.getElementById("eid");
-    var pasw = document.getElementById("psw");
+    alert("Signing Up");
+    const email = String(document.getElementById('eid').value);
+    const pasw = String(document.getElementById('psw').value);
     firebase.auth().createUserWithEmailAndPassword(email, pasw)
   .then((userCredential) => {
     // Signed in 
     var user = userCredential.user;
-    alert("Yay Signed Up");
-    location.replace("file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/library.html");
+    alert("Signed Up");
+    location.replace("./library.html");
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -33,12 +23,30 @@
 
   }
   
-  
-firebase.auth.Auth.Persistence.NONE;
-  
+  function google_login(){
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(result => {
+      const user = result.user;
+      console.log(user)
+      if(user){
+        alert("Logged In");
+        location.replace("./library.html");
+      }
+    })
+    .catch(console.log)
+  }
+  function logout(){
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      alert("Logged Out");
+      location.replace("./index.html")
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
   function login(){
-      var email = document.getElementById("reqe").value;
-      var pasw = document.getElementById("reqp").value;
+      const email = String(document.getElementById('reqe').value);
+      const pasw = String(document.getElementById('reqp').value);
       
       const promise = firebase.auth.signInWithEmailAndPassword(email, pasw).then((success) =>{
         
@@ -49,7 +57,7 @@ firebase.auth.Auth.Persistence.NONE;
             }
             
 		alert("Logged In");
-        location.replace("file:///c:/Users/LENOVO/Desktop/rp/py/web/web dev/.hack proj/public/library.html");
+        location.replace("./library.html");
     });
 		promise.catch(e => alert(e.message));
 		
