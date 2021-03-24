@@ -3,32 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="icon" href="img\favicon.png" sizes="76x76">
     <title>Books</title>
 </head>
 <body>
     <div class="prod-1">
-         <div class="vis">
-             <h1>Book name</h1>
-             <h2>Author</h2>
-             <img src="think like a monk.png" width="300px" alt="think like a monk"></img>
-             <p>Price</p>
-             <button onclick="getCon()" class="btn" type="submit">Details</button>
-             <div class="inv" id="inv">
-                <legend><b>Contributor details</b></legend>
-                Name: <br>
-                    
-                <br><br>
-                Contact:<br>
-                
-                <br><br>
-                
-             </div>
-         </div>
+        <div class="col-sm-3">
+            <h1>Think Like A Monk</h1>
+            <h2>Jay Shetty</h2>
+            <img src="think like a monk.png" width="300px" height="300px" alt="think like a monk"></img>
+            <p>Price</p>
+            <button onclick="getCon()" class="btn" type="submit">Details</button>
+            <div class="inv" id="inv">
+               <legend><b>Contributor details</b></legend>
+               Name: <br>
+                   
+               <br><br>
+               Contact:<br>
+               
+               <br><br>
+            </div>
+        </div>
+    
+        <div class="col-sm-3">
+           <h1>Wonder</h1>
+           <h2>R J Palacio</h2>
+           <img src="wonder.jpeg" width="300px" height="300px" alt="wonder"></img>
+           <p>Price</p>
+           <button onclick="getCon2()" class="btn" type="submit">Details</button>
+           <div class="inv2" id="inv2">
+              <legend><b>Contributor details</b></legend>
+              Name: <br>
+                  
+              <br><br>
+              Contact:<br>
+              
+              <br><br>
+              </div>
+           </div>
+    
+       <div class="col-sm-3">
+           <h1>The discovery of India</h1>
+           <h2>Jawaharlal Nehru</h2>
+           <img src="the discovery of india.jpeg" width="300px" height="300px" alt="the discovery of india"></img>
+           <p>Price</p>
+           <button onclick="getCon3()" class="btn" type="submit">Details</button>
+           <div class="inv3" id="inv3">
+              <legend><b>Contributor details</b></legend>
+              Name: <br>
+                  
+              <br><br>
+              Contact:<br>
+              
+              <br><br>
+              
+           </div>
+       </div>
+    
+       <div class="col-sm-3">
+        <h1>Like the Flowing River</h1>
+        <h2>Paulo Coelo</h2>
+        <img src="like_the_flowing_river.jpeg" width="300px" height="300px" alt="the like_the_flowing_river"></img>
+        <p>Price</p>
+        <button onclick="getCon4()" class="btn" type="submit">Details</button>
+        <div class="inv4" id="inv4">
+           <legend><b>Contributor details</b></legend>
+           Name: <br>
+               
+           <br><br>
+           Contact:<br>
+           
+           <br><br>
+           
+        </div>
     </div>
-    <div class="prod-2">
-
-    </div>
+   </div>
+    
+    <br>
+    <br>
     <div class="cont">
         
     <button onclick="formFunction()" type="button" class="sec">Contribute in this category</button>
@@ -84,7 +139,39 @@
                 event.preventDefault()
             }
         }
-    
+        function getCon2(){
+            var name;
+            var cont;
+            if(document.getElementById("inv2").style.display="none"){
+                document.getElementById("inv2").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv2").style.display="block"){
+                document.getElementById("inv2").style.display="none";
+                event.preventDefault()
+            }
+        }
+        function getCon3(){
+            var name;
+            var cont;
+            if(document.getElementById("inv3").style.display="none"){
+                document.getElementById("inv3").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv3").style.display="block"){
+                document.getElementById("inv3").style.display="none";
+                event.preventDefault()
+            }
+        }
+        function getCon4(){
+            var name;
+            var cont;
+            if(document.getElementById("inv4").style.display="none"){
+                document.getElementById("inv4").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv4").style.display="block"){
+                document.getElementById("inv4").style.display="none";
+                event.preventDefault()
+            }
+        }
     
     </script>
     <style>
