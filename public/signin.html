@@ -40,7 +40,12 @@
 
 
             <input type="password" id="cpw" placeholder="Confirm your password" class="c-psw" required><br><br>
+            <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
 
+                <input type="checkbox" name="checkbox" value="check" id="agree" /> <p>I have read and agree to the Terms and Conditions and Privacy Policy</p>
+                
+                
+                </form>
             <button type="button" id="btn" class="btn" onclick="signup()"><b>SUBMIT</b></button><br><br>
             <br><br>
             <button type="button" class="btng" onclick="google_login()"><img id="glogo" width="80px" src="/img/glogo.png" /><br><b>SIGN IN WITH GOOGLE</b></button><br>
