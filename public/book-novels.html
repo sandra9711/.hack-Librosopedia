@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="img\favicon.png" sizes="76x76">
+    <title>Books</title>
+</head>
+<body>
+    <div class="prod-1">
+        <div class="col-sm-3">
+            <h1>Think Like A Monk</h1>
+            <h2>Jay Shetty</h2>
+            <img src="think like a monk.png" width="300px" height="300px" alt="think like a monk"></img>
+            <p>Rs. 400</p>
+            <button onclick="getCon()" class="btn" type="submit">Details</button>
+            <div class="inv" id="inv">
+               <legend><b>Contributor details</b></legend>
+               Name: Sandra  <br>
+                   
+               <br><br>
+               Contact: 1234<br>
+               
+               <br><br>
+            </div>
+        </div>
+    
+        <div class="col-sm-3">
+           <h1>Wonder</h1>
+           <h2>R J Palacio</h2>
+           <img src="wonder.jpeg" width="300px" height="300px" alt="wonder"></img>
+           <p>Rs. 500</p>
+           <button onclick="getCon2()" class="btn" type="submit">Details</button>
+           <div class="inv2" id="inv2">
+              <legend><b>Contributor details</b></legend>
+              Name: Blessey<br>
+                  
+              <br><br>
+              Contact: 4567<br>
+              
+              <br><br>
+              </div>
+           </div>
+    
+       <div class="col-sm-3">
+           <h1>The discovery of India</h1>
+           <h2>Jawaharlal Nehru</h2>
+           <img src="the discovery of india.jpeg" width="300px" height="300px" alt="the discovery of india"></img>
+           <p>Rs. 600</p>
+           <button onclick="getCon3()" class="btn" type="submit">Details</button>
+           <div class="inv3" id="inv3">
+              <legend><b>Contributor details</b></legend>
+              Name: Anuvindha<br>
+                  
+              <br><br>
+              Contact: 6789<br>
+              
+              <br><br>
+              
+           </div>
+       </div>
+    
+       <div class="col-sm-3">
+        <h1>Like the Flowing River</h1>
+        <h2>Paulo Coelo</h2>
+        <img src="like_the_flowing_river.jpeg" width="300px" height="300px" alt="the like_the_flowing_river"></img>
+        <p>Rs. 700</p>
+        <button onclick="getCon4()" class="btn" type="submit">Details</button>
+        <div class="inv4" id="inv4">
+           <legend><b>Contributor details</b></legend>
+           Name: Anupama<br>
+               
+           <br><br>
+           Contact: 3456<br>
+           
+           <br><br>
+           
+        </div>
+    </div>
+   </div>
+    
+    <br>
+    <br>
+    <div class="cont">
+        
+    <button onclick="formFunction()" type="button" class="sec">Contribute in this category</button>
+    <form  class="fc1" name="fm" id="form">
+        <fieldset>
+            <legend><b>Book details</b>
+            </legend>
+            Name: <br>
+            <input id="fid1" type="text" name="firstname"  >
+            <br><br>
+            Book Name & category:<br>
+            <input id= "fid2" type="text" name="lastname"  >
+            <br><br>
+            Contact:<br>
+            <input id="fid3" type="email" name="mail id"  >
+            <br><br>
+            Image:<br>
+            <input id="fid4" type="file" name="bookim" accept="image/x-png,image/gif,image/jpeg">
+            <br><br>
+            Set Price:<br>
+            <input id="fid5" type="text" name="bookpr">
+            <br><br>
+            <button type="submit" onclick="fn()">SUBMIT</button>
+        </fieldset>
+    </form>
+    <p id="con"></p>
+    </div>
+    <script>
+        function dtFunction(){
+            var name=prompt("Name:","Enter name here");
+            var eid=prompt("Email Id:","Enter mail id here");
+            var bn=prompt("Book:","Enter Book name here");
+            if(name!=null && eid!=null && bn!=null){
+                document.getElementById("con").innerHTML="Thank you "+name+"\nYou have succesfully uploaded the book details.";
+            }else{
+                document.getElementById("con").innerHTML="Sorry , upload was unsuccesful.Try Again";
+            }
+        }
+        function formFunction(){
+            if(document.getElementById("form").style.display="none"){
+                document.getElementById("form").style.display="block"
+                event.preventDefault()
+            }
+        }
+        function getCon(){
+            var name;
+            var cont;
+            if(document.getElementById("inv").style.display="none"){
+                document.getElementById("inv").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv").style.display="block"){
+                document.getElementById("inv").style.display="none";
+                event.preventDefault()
+            }
+        }
+        function getCon2(){
+            var name;
+            var cont;
+            if(document.getElementById("inv2").style.display="none"){
+                document.getElementById("inv2").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv2").style.display="block"){
+                document.getElementById("inv2").style.display="none";
+                event.preventDefault()
+            }
+        }
+        function getCon3(){
+            var name;
+            var cont;
+            if(document.getElementById("inv3").style.display="none"){
+                document.getElementById("inv3").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv3").style.display="block"){
+                document.getElementById("inv3").style.display="none";
+                event.preventDefault()
+            }
+        }
+        function getCon4(){
+            var name;
+            var cont;
+            if(document.getElementById("inv4").style.display="none"){
+                document.getElementById("inv4").style.display="block";
+                event.preventDefault()
+            }else if(document.getElementById("inv4").style.display="block"){
+                document.getElementById("inv4").style.display="none";
+                event.preventDefault()
+            }
+        }
+    
+    </script>
+    <style>
+        
+        .prod-1{
+            background-color: rgb(241, 225, 219);
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+        #form{
+            display: none;
+        }
+        #inv{
+            display: none;
+        }
+        #inv2{
+            display: none;
+        }
+        #inv3{
+            display: none;
+        }
+        #inv4{
+            display: none;
+        }
+        .fc1{
+            padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(204, 192, 175);
+        }
+        .sec{
+            padding: 20px;
+            color: white;
+            background-color: rgb(65, 19, 19);
+            font-size: 2em;
+            margin: 3em;
+        }
+        body{
+            background-image: url("img-bg.png");
+            background-repeat: no-repeat;
+            background-color: rgb(204, 192, 175);
+            background-size: cover;
+        }
+    </style>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+      
+       
+      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+     <script>
+         var firebaseConfig = {
+    apiKey: "AIzaSyAZ63jV93s9PJacblbiLnMeo7UcUg1nuu4",
+    authDomain: "librosopedia.firebaseapp.com",
+    projectId: "librosopedia",
+    storageBucket: "librosopedia.appspot.com",
+    messagingSenderId: "956548396826",
+    appId: "1:956548396826:web:49a24f9f495a41ce111ea3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ //var database=firebase.database();
+
+     </script>
+     <script>
+         //Insering Data to firebase db
+    function fn(){
+        var d_1=document.getElementById("fid1");
+        var d_2=document.getElementById("fid2");
+        var d_3=document.getElementById("fid3");
+        var d_5=document.getElementById("fid5");
+       if(d_1.value==""){
+            alert("Contributor Name should be filled.");
+        }
+        if(d_2.value==""){
+            alert("Book Name and category should be filled.");
+    
+        }
+        if(d_3.value==""){
+            alert("Contact cannot be empty.");
+        }
+        if(d_1.value!=null && d_2.value!=null && d_3.value!=null){
+            firebase.database.ref('books/'+d_2).set({
+                Contributor_Name: d_1.value,
+                Book_name: d_2.value,
+                Contact:d_3.value,
+                Price:d_5.value
+
+            });
+            alert("data inserted successfully");
+            
+            document.getElementById("con").innerHTML="Thank you You have succesfully uploaded the book details.";
+            event.preventDefault();
+        }
+        if(d_1.value==null || d_2.value==null || d_3.value==null){
+            document.getElementById("con").innerHTML="Upload failed .Try Again";
+            event.preventDefault();
+        }
+    }
+     </script>
+</body>
+</html>
