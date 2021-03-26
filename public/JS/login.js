@@ -39,21 +39,14 @@ function data_fn(){
     }
     
     //writeUserData(d_1, d_2, d_3,d_5);
-    var fref=firebase.database().ref('book data');
-    if(fref==null){
-      console.log("Error")
-    }else{
-      console.log("not null")
-    }
-    fref.set({
+    var fref=firebase.database().ref();
+    
+    fref.child('book/'+d_2.value).set({
       name: d_1,
       book:d_2,
       contact:d_3,
       price: d_5
     });
-    let bRef = this.database.ref('users/' + d_2);
-    bRef.child('cond/'+d_1).set({'contact': value.d_1, 'price': value.d_5});
-    //fref.ref("contributor").child("price").set(d_5.value);
     alert("Thank You.Submission succesful.Our team will review the data.")
     document.getElementById('form').reset();
 }

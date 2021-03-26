@@ -9,6 +9,16 @@
     <link rel="icon" href="img\favicon.png" sizes="76x76">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="/__/firebase/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+<script src="/__/firebase/8.3.1/firebase-auth.js"></script>
+<script src="/__/firebase/8.3.1/firebase-database.js"></script>
+<script src="/__/firebase/8.3.1/firebase-firestore.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
     <title>Blog</title>
   </head>
   <body>
@@ -19,7 +29,9 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-info">
                     <div class="panel-body">
-                        <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                        <textarea placeholder="Add a title" class="textarea" id="title"></textarea>
+                        <!--<textarea placeholder="Date" class="textarea" id="date"></textarea>-->
+                        <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea" id="blog_txt"></textarea>
                         <form class="form-inline">
                             <div class="btn-group">
                                 <button class="btn" type="button"><i class="fas fa-video"></i></button>
@@ -27,14 +39,14 @@
                                 <button class="btn" type="button"><i class="fas fa-microphone"></i></button>
                                 <button class="btn" type="button"><i class="fas fa-image"></i></button>
                             </div>
-                            <button class="btn btn-secondary pull-right" type="button">Share</button>
+                            <button class="btn btn-secondary pull-right" type="submit" onclick="append_data()">Share</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="./JS/blog.js"></script>
     <style>
         .pb-cmnt-container {
             font-family: Lato;
