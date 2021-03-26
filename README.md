@@ -17,7 +17,7 @@ Categorised details of books are available in the library page.
 ![](images/ct.png)
 User can easily contribute their used books to others by filling the form.
 ![](images/cont.png)
-Books with contributor deatils are provided in the site.So user can directly contact them.Only the expense for sending book has to be remitted from the user.
+Books with contributor deatils are provided in the site. So user can directly contact them.Only the expense for sending book has to be remitted from the user.
 
 
 
