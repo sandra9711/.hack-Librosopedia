@@ -7,12 +7,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="img\favicon.png" sizes="76x76">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.3.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+<script src="/__/firebase/8.3.1/firebase-auth.js"></script>
+<script src="/__/firebase/8.3.1/firebase-database.js"></script>
+<script src="/__/firebase/8.3.1/firebase-firestore.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/8.3.1/firebase-storage.js"></script>
+<script src="/__/firebase/init.js"></script>
 </head>
 <body>
     <div class="head-cont">
         <div class="logo">
             <img src="img\Librosopedia (1).png" alt="Logo img">
-            <a href="signin.html"><p>Have an account? Sign In</p></a>
+            <a href="./login.html"><p>Have an account? Sign In</p></a>
         
         </div>
         
@@ -35,14 +47,14 @@
 <script>
   function jFunction(){
     if(document.getElementById("get").checked==true){
-        location.replace("signin.html")
+        location.replace("./signin.html")
         
     }else if(document.getElementById("con").checked==true){
         //document.body.style.backgroundColor = "#6d5f5f";
-        location.replace("signin.html")
+        location.replace("./signin.html")
         
     }else if(document.getElementById("swap").checked==true){
-        location.replace("signin.html")
+        location.replace("./signin.html")
         
     }else{
         window.alert("Select one option to join");
@@ -85,7 +97,7 @@ function loc(){
     }
     .btn{
         align-items: center;
-        margin-left: 150px;
+        margin-left: 200px;
     }
     input{
         margin: 10px;
