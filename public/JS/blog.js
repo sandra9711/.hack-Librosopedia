@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded",event=>{
-    const db = firebase.firestore();
+    
 let thingsRef;
 let unsubscribe;
     const app=firebase.app();
     console.log(app)
   });
+  let db = firebase.firestore();
 
-  function append_data(){
+  document.addEventListener('blogbtn').onclick=function(ev){
+      ev.preventDefault();
+      append_data();
+  }
+function append_data(){
       // Add a new document with a generated id.
       var tl = document.getElementById("title").value;
       //var dt = document.getElementById("date").value;

@@ -18,6 +18,7 @@
 <script src="/__/firebase/8.3.1/firebase-database.js"></script>
 <script src="/__/firebase/8.3.1/firebase-firestore.js"></script>
 <!-- Initialize Firebase -->
+<script src="/__/firebase/8.3.1/firebase-storage.js"></script>
 <script src="/__/firebase/init.js"></script>
     <title>Blog</title>
   </head>
@@ -39,7 +40,7 @@
                                 <button class="btn" type="button"><i class="fas fa-microphone"></i></button>
                                 <button class="btn" type="button"><i class="fas fa-image"></i></button>
                             </div>
-                            <button class="btn btn-secondary pull-right" type="submit" onclick="append_data()">Share</button>
+                            <button class="btn btn-secondary pull-right" id="blogbtn">Share</button>
                         </form>
                     </div>
                 </div>
