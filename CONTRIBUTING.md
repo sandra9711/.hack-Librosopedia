@@ -22,7 +22,7 @@ git clone https://github.com/<your_user_name>/.hack-Librosopedia.git
 - Now move inside the project directory 
 
 ```
-cd doc2pen
+cd .hack-Librosopedia
 ```
 
 - Check for the current remotes of the git repository (the local copy of your forked repository)
